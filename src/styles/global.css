@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light mode: darker blue for legibility */
+:root {
+  --color-accent: 30 64 175; /* blue-800 */
+}
+/* Dark mode: brighter blue to pop against dark backgrounds */
+.dark {
+  --color-accent: 59 130 246; /* blue-500 */
+}
+
+@layer base {
+  html {
+    font-size: 150%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200 transition-colors duration-200;
+  }
+
+  ::selection {
+    @apply bg-accent/20 text-accent-dark dark:text-accent-light;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-300 dark:bg-zinc-700 rounded-full;
+    transition: background 0.2s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent/70;
+  }
+}
+
+/* ─── Page-load hero animations ───────────────────────────── */
+.hero-animate {
+  animation: fadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+.hero-animate.d1 { animation-delay: 0.05s; }
+.hero-animate.d2 { animation-delay: 0.15s; }
+.hero-animate.d3 { animation-delay: 0.25s; }
+.hero-animate.d4 { animation-delay: 0.38s; }
+.hero-animate.d5 { animation-delay: 0.50s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Scroll-reveal ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-children > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-children.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-children.in-view > *:nth-child(2)  { transition-delay: 0.07s; }
+.reveal-children.in-view > *:nth-child(3)  { transition-delay: 0.14s; }
+.reveal-children.in-view > *:nth-child(4)  { transition-delay: 0.21s; }
+.reveal-children.in-view > *:nth-child(5)  { transition-delay: 0.28s; }
+.reveal-children.in-view > *:nth-child(6)  { transition-delay: 0.35s; }
+.reveal-children.in-view > *:nth-child(7)  { transition-delay: 0.42s; }
+.reveal-children.in-view > *:nth-child(8)  { transition-delay: 0.49s; }
+.reveal-children.in-view > *:nth-child(n+9){ transition-delay: 0.56s; }

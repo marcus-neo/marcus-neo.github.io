@@ -1,0 +1,38 @@
+---
+const activities = [
+  {
+    icon: "🤿",
+    title: "Scuba Diving",
+    description: "PADI Advanced Open Water + Nitrox certified, 50+ logged dives",
+  },
+  {
+    icon: "💻",
+    title: "IC Hack 2020",
+    description: "Semi-finalist — Smart Recipe Cookbook",
+  },
+  {
+    icon: "🎵",
+    title: "Imperial College Singapore Society Musical 2020",
+    description: "Composed and conducted the orchestra",
+  },
+];
+---
+
+<section id="activities" class="py-20 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="reveal flex items-baseline gap-3 mb-12">
+      <span class="font-mono text-xs text-zinc-400 dark:text-zinc-600 tracking-widest select-none">05</span>
+      <h2 class="font-display text-2xl font-bold text-zinc-900 dark:text-zinc-50">Activities & Interests</h2>
+    </div>
+
+    <div class="reveal-children grid gap-6 sm:grid-cols-3">
+      {activities.map((activity) => (
+        <div class="p-5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
+          <span class="text-2xl mb-3 block">{activity.icon}</span>
+          <h3 class="font-display font-semibold text-zinc-900 dark:text-zinc-100 mb-2">{activity.title}</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400">{activity.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
