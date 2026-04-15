@@ -1,12 +1,6 @@
 ---
 const projects = [
   {
-    title: "Swing Trading Bot",
-    period: "2020 — Present",
-    description: "Automated trading bot built with Python and Excel VBA, using wave/tide momentum, Chaikin Money Flow, and ATR trailing stop-loss strategies.",
-    tags: ["Python", "Excel VBA", "Trading"],
-  },
-  {
     title: "Data Stream Evolution using Multiresolution Wavelet Transform",
     period: "2021 — 2022",
     description: "MEng final year project — Python-based ML research applying wavelet transforms as preprocessing for anomaly detection in evolving data streams.",
@@ -19,7 +13,7 @@ const projects = [
 <section id="projects" class="py-20 px-6 bg-zinc-50 dark:bg-zinc-900/30">
   <div class="max-w-5xl mx-auto">
     <div class="reveal flex items-baseline gap-3 mb-12">
-      <span class="font-mono text-xs text-zinc-400 dark:text-zinc-600 tracking-widest select-none">04</span>
+      <span class="font-mono text-sm text-zinc-400 dark:text-zinc-600 tracking-widest select-none">04</span>
       <h2 class="font-display text-2xl font-bold text-zinc-900 dark:text-zinc-50">Projects</h2>
     </div>
 
@@ -42,11 +36,11 @@ const projects = [
               </a>
             )}
           </div>
-          <p class="font-mono text-[10px] text-zinc-500 dark:text-zinc-500 mb-3 tracking-wide">{project.period}</p>
+          <p class="font-mono text-xs text-zinc-500 dark:text-zinc-500 mb-3 tracking-wide">{project.period}</p>
           <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">{project.description}</p>
           <div class="flex flex-wrap gap-2">
             {project.tags.map((tag) => (
-              <span class="font-mono px-2.5 py-1 text-[10px] font-medium rounded-md bg-accent/10 text-accent dark:text-accent-light">
+              <span class="font-mono px-2.5 py-1 text-xs font-medium rounded-md bg-accent/10 text-accent dark:text-accent-light">
                 {tag}
               </span>
             ))}
